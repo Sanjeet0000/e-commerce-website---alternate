@@ -1,0 +1,78 @@
+.carousel-slide {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.carousel-slide:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.carousel-slide:nth-child(2) {
+    transform: scale(1.1);
+    z-index: 1;
+}
+.carousel-slide:nth-child(2):hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+.carousel-nav {
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.carousel-prev, .carousel-next {
+    border: none;
+    position: absolute;
+    top:75px;
+    transition: all 0.2s ease-in-out;
+    filter: invert(100%);
+}
+.carousel-next{
+    right: 0;
+}
+
+.SlideImg{
+    position: relative;
+    align-self: flex-start;
+    transform: scale(0.6);
+    right: 80px;
+}
+
+.carousel-slide .card-title{
+    position: relative;
+    bottom:8rem;
+    left: 8rem;
+}
+
+.SlidePrice{
+    position: relative;
+    bottom: 6rem;
+    left: 5px;
+    font-size: 14px;
+}
+
+.SlideDiscountedPrice{
+    position: relative;
+    bottom: 6rem;
+    left: 60px;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 400px) {
+    .carousel-prev{
+        left: 0%;
+    }
+
+}

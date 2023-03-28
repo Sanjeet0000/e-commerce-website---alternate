@@ -1,0 +1,101 @@
+.IphoneImg {
+    height: 69vh;
+    position: absolute;
+    bottom: 0;
+}
+
+.IphoneText{
+    align-self: center;
+    padding-left: 100px;
+}
+
+.TextTitle {
+    font-size: 66px;
+}
+
+.TextBody {
+    font-size: 24px;
+}
+
+.ShopNow{
+    text-decoration: none;
+    position: absolute;
+    font-size: 14px;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 768px) {
+    .IphoneImg-container{
+        justify-content: flex-start;
+    }
+    .IphoneImg {
+        width: 285px;
+        height: 420px;
+        left: -40px;
+    }
+    .IphoneText{
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        width: 100vw !important;
+        padding-left: 0px;
+    }
+    .TextTitle {
+        font-size: 35px;
+    }
+    .TextBody {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 376px) {
+    .TextTitle {
+        font-size: 30px;
+    }
+}
+/************** StorePage Iphone Banner****************************************************************/
+.StorePage{
+    border-radius: 10px;
+}
+
+.WideIphone2{
+    width: 100%;
+    height: 360px;
+    padding-left: 50px;
+}
+
+.IphoneImg2{
+    height: 350px;
+}
+.IphoneText2{
+    align-self: center;
+}
+.TextTitle2 {
+    font-size: 42px;
+}
+.TextBody2 {
+    font-size: 18px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .StorePage{
+        display: none;
+    }
+    #content-list{
+        justify-content: center !important;
+    }
+}
+
+@media only screen and (max-width: 560px){
+
+    #carouselExampleIndicators{
+        height: 40vh;
+    }
+    .carousel-pc{
+        height: 40vh;
+        object-fit:cover;
+    }
+}
+
+
+
