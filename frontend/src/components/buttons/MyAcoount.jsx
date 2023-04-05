@@ -1,3 +1,47 @@
+function handleSignup(event) {
+    event.preventDefault(); //prevent default form submission
+    const username = event.target.elements.username.value; //get the username from input field
+    const email = event.target.elements.email.value; //get the email from input field
+    const password = event.target.elements.password.value; //get the password from input field
+    fetch('http://localhost:5000/signup', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        alert(JSON.stringify(data));
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+  
+  function handleLogin(event) {
+    event.preventDefault(); //prevent default form submission
+    const email = event.target.elements.emailLogin.value; //get the email from input field
+    const password = event.target.elements.passwordLogin.value; //get the password from input field
+    fetch('http://localhost:5000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        alert(JSON.stringify(data));
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  }
+  
+
 function MyAccount()
 {
     return(
@@ -23,25 +67,15 @@ function MyAccount()
                         <button type="button" className="close pr-5" data-dismiss="modal" aria-label="Close">&times;</button>
                     </div>
 
-                    <div className="modal-body pt-5">
-                        <div className="d-flex justify-content-center">
-                            <button className="btn-3d btn-danger w-75 mb-4">
-                                <span className="fa fa-google mr-2"></span> Sign in With Google
-                            </button>
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <button className="btn-3d btn-primary w-75 mb-4">
-                                <span className="fa fa-facebook mr-2"></span> Sign in With Facebook
-                            </button>
-                        </div>    
-                        <form className="w-75 ml-5">
+                    <div className="modal-body pt-5">  
+                        <form className="w-75 ml-5" onSubmit={handleLogin}>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                                <input type="email" className="form-control" id="exampleInputEmail1" name="emailLogin" aria-describedby="emailHelp"/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1"/>
+                                <input type="password" className="form-control" id="exampleInputPassword1" name="passwordLogin"/>
                             </div>
                             <div className="mb-3 form-check">
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
@@ -63,30 +97,19 @@ function MyAccount()
                         <h5 className="modal-title" id="exampleModalLabel">Signup</h5>
                         <button type="button" className="close pr-5" data-dismiss="modal" aria-label="Close">&times;</button>
                     </div>
-                    <div className="modal-body pt-5">
-                        <div className="d-flex justify-content-center">
-                            <button className="btn-3d btn-danger w-75 mb-4">
-                                <span className="fa fa-google mr-2"></span> Signup With Google
-                            </button>
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <button className="btn-3d  btn-primary w-75 mb-4">
-                                <span className="fa fa-facebook mr-2"></span> Signup With Facebook
-                            </button>
-                        </div>    
-                        <form className="w-75 ml-5">
+                    <div className="modal-body pt-5">  
+                        <form className="w-75 ml-5" onSubmit={handleSignup}>
                             <div className="mb-3">
-                                <label htmlFor="exampleInput" className="form-label">Username</label>
-                                <input type="text" className="form-control" id="exampleInput" />
+                                <label htmlFor="signup-username" className="form-label">Username</label>
+                                <input type="text" className="form-control" id="signup-username" name="username" />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                                <label htmlFor="signup-email" className="form-label">Email address</label>
+                                <input type="email" className="form-control" id="signup-email" name="email" aria-describedby="emailHelp" />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1" />
+                                <label htmlFor="signup-password" className="form-label">Password</label>
+                                <input type="password" className="form-control" id="signup-password" name="password" />
                             </div>
                             <div className="mb-3 form-check">
                                 <input type="checkbox" className="form-check-input" id="exampleCheck1" />

@@ -194,7 +194,7 @@ const Checkout = () => {
 
                             <hr className="my-4" />
 
-                            <Link to="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="w-100 btn btn-light btn-lg" style={{boxShadow:"0 0 5px rgba(0, 0, 0, 0.4)"}} type="submit">Continue to checkout</Link>
+                            <Link to="/" className="w-100 btn btn-light btn-lg" style={{boxShadow:"0 0 5px rgba(0, 0, 0, 0.4)"}} type="submit">Continue to checkout</Link>
                         </form>
                     </div>
                 </div>
