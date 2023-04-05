@@ -3,7 +3,7 @@ function handleSignup(event) {
     const username = event.target.elements.username.value; //get the username from input field
     const email = event.target.elements.email.value; //get the email from input field
     const password = event.target.elements.password.value; //get the password from input field
-    fetch('http://localhost:5000/signup', {
+    fetch('https://e-commerce-backend-risj.onrender.com/signup', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function handleSignup(event) {
     event.preventDefault(); //prevent default form submission
     const email = event.target.elements.emailLogin.value; //get the email from input field
     const password = event.target.elements.passwordLogin.value; //get the password from input field
-    fetch('http://localhost:5000/login', {
+    fetch('https://e-commerce-backend-risj.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
