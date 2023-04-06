@@ -4,7 +4,7 @@ function handleSignup(event) {
     const username = event.target.elements.username.value; //get the username from input field
     const email = event.target.elements.email.value; //get the email from input field
     const password = event.target.elements.password.value; //get the password from input field
-    fetch('https://e-commerce-backend-nx4k.onrender.com/signup', {
+    fetch('https://e-commerce-backend-qnwv.onrender.com/signup', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ function handleSignup(event) {
     event.preventDefault(); //prevent default form submission
     const email = event.target.elements.emailLogin.value; //get the email from input field
     const password = event.target.elements.passwordLogin.value; //get the password from input field
-    fetch('https://e-commerce-backend-nx4k.onrender.com/login', {
+    fetch('https://e-commerce-backend-qnwv.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
